@@ -1,5 +1,6 @@
 var finances = [
-['Jan-2010', 867884],
+['Jan-2010', 867884], // finances[0][1] or var firstEelement = finances[0];
+                      // var firstProfitorLoss = firstElement[1];
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
 ['Apr-2010', -69417],
@@ -86,3 +87,94 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// var firstElement = finances[0][i];
+// var profitOrLoss = finances[i][1];
+
+
+
+console.log("Financial Analysis");
+console.log("------------------------------");
+
+// The total number of months included in the dataset.
+//figure out the length of the main array and print that to the console
+console.log("Total Months: " + finances.length);
+
+
+// The net total amount of Profit/Losses over the entire period.
+// Calculating the sum of profit and losses 
+
+var sum = 0;
+
+for (let i=0; i < finances.length; i++) {
+    sum += finances[i][1];
+}
+
+console.log("Total amount of profit/losses: " + sum);
+
+// The average of the changes in Profit/Losses over the entire period.
+
+var difference = 0; 
+var allDifferences = [];
+
+for (let i=1; i < finances.length; i++) {
+    difference = finances[i][1] - finances[i-1][1];
+    //console.log(difference);
+    allDifferences.push(difference); 
+}
+
+var totalDifference = 0;
+
+for (let i=0; i < allDifferences.length; i++) {
+    totalDifference += allDifferences[i];
+}
+
+var averageDifference = totalDifference / allDifferences.length;
+
+console.log("Average change: " + averageDifference);
+
+// You will need to track what the total change in profits is from month to month and then find the average.
+//
+
+// (Total/Number of months)
+// a loop
+// figure out the change between the current month and the last month
+// add that value to running total 
+// divide the running total by the number of months = 1 
+
+// The greatest increase in profits (date and amount) over the entire period.
+// a loop and then every time in the loop 
+// check if the increase in profits is greater than the greatest one so far 
+// if yes 
+// update the greatest 
+// if not 
+//nothing 
+
+// The greatest decrease in losses (date and amount) over the entire period.
+// a loop and then every time in the loop 
+// check if the increase in profits is less than the smallest one so far 
+// if yes 
+// update the greatest 
+// if not 
+//nothing 
+
+
+Greatest Increase in Profits: Feb-2012 ($1926159)
+Greatest Decrease in Profits: Sep-2013 ($-2196167) */ 
+
+
+
+// var salary = [
+//    ["ABC", 24, 18000],
+//    ["EFG", 30, 30000],
+//    ["IJK", 28, 41000],
+//    ["EFG", 31, 28000],
+// ];
+// This notation access the salary of "ABC" person which is 18000, 
+// [0] selects 1st row, and [2] selects the 3rd element
+// of that 1st row which is 18000
+// salary[0][2];
+// Similarly, 
+// salary[3][2]; 
+// Selects 28000;
+
