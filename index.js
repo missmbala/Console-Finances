@@ -133,14 +133,6 @@ var averageDifference = totalDifference / allDifferences.length;
 
 console.log("Average change: " + averageDifference);
 
-// You will need to track what the total change in profits is from month to month and then find the average.
-//
-
-// (Total/Number of months)
-// a loop
-// figure out the change between the current month and the last month
-// add that value to running total 
-// divide the running total by the number of months = 1 
 
 // The greatest increase in profits (date and amount) over the entire period.
 // a loop and then every time in the loop 
@@ -150,6 +142,19 @@ console.log("Average change: " + averageDifference);
 // if not 
 //nothing 
 
+function largestNumber(finances) {
+    var largest = 0;
+    for (let i = 0; i < finances.length; i++) {
+        var elements = finances[i][1];
+        if (elements > largest) {
+            largest = elements;
+        }
+    }
+    return largest;
+}
+console.log("Greatest Increase in Profits: Feb-2012 " + largestNumber(finances));
+
+
 // The greatest decrease in losses (date and amount) over the entire period.
 // a loop and then every time in the loop 
 // check if the increase in profits is less than the smallest one so far 
@@ -158,9 +163,22 @@ console.log("Average change: " + averageDifference);
 // if not 
 //nothing 
 
+function lowestNumber(finances) {
+    var lowest = 0;
+    for (let i = 0; i < finances.length; i++) {
+        var elements = finances[i][1];
+        if (elements < lowest) {
+            lowest = elements;
+        }
+    }
+    return lowest;
+}
+console.log(lowestNumber(finances));
 
-Greatest Increase in Profits: Feb-2012 ($1926159)
-Greatest Decrease in Profits: Sep-2013 ($-2196167) */ 
+
+
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167) */ 
 
 
 
